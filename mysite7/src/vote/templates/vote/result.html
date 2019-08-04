@@ -1,0 +1,15 @@
+{% extends 'base.html' %} <!-- templates에 저장해야함. cl 안에 저장하는게 아니라. -->
+{% block content %}
+{#q: Question 객체 한개 c_list:Choice객체들#}
+<h2>{{q.title}} 투표 결과</h2>
+<ul>
+{% for c in c_list %}
+<li> {{c.name}} - {{c.votes}}표 </li>
+{% endfor %}
+</ul>
+<!--
+<a href="/vote/">메인화면으로 돌아가기</a>
+url과 'main'사이에는 공백이 한칸만 있어야함
+-->
+<a href="{% url 'main' %}">메인화면으로 돌아가기</a>
+{%endblock%}

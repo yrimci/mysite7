@@ -1,0 +1,16 @@
+{% extends 'base.html' %} <!-- templates에 저장해야함. cl 안에 저장하는게 아니라. -->
+{% block content %}
+
+{# result: <td><tr>로 감싸진 <input>들 #}
+<h3>설문조사 수정 페이지</h3>
+<form action='' method='post'>
+    {% csrf_token %}
+    <table border=1> 
+    {{result}} 
+    </table>
+    <input type="submit" value="수정">
+</form>
+
+<a href="{% url %}">메인페이지로 돌아가기</a>
+
+{%endblock%}

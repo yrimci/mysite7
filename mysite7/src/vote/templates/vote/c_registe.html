@@ -1,0 +1,16 @@
+{% extends 'base.html' %} <!-- templates에 저장해야함. cl 안에 저장하는게 아니라. -->
+{% block content %}
+{# result: p태그로 감싼 input태그들 #}
+
+<h3>답변항목 추가하기 페이지</h3>
+
+<form action="" method='post'>
+    {% csrf_token %}
+    <table>
+       {{ result }}
+    </table>
+    <input type="submit" value="답변 추가">
+</form>
+
+<a href="{% url 'main' %}">메인페이지로 돌아가기</a>
+{%endblock%}
